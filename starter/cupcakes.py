@@ -12,7 +12,14 @@ class Cupcake:
         for arg in args:
             self.sprinkles.append(arg)
 
-my_favorite_cupcake = Cupcake("Banana Chocolate Cupcake", 4.99, "Banana", "Chocolate Buttercream", "Melted Chocolate")
+
+my_favorite_cupcake = Cupcake(
+    "Banana Chocolate Cupcake",
+    4.99,
+    "Banana",
+    "Chocolate Buttercream",
+    "Melted Chocolate",
+)
 
 my_favorite_cupcake.frosting = "Chocolate"
 my_favorite_cupcake.filling = "Chocolate"
@@ -22,6 +29,8 @@ print(my_favorite_cupcake.frosting)
 print(my_favorite_cupcake.filling)
 print(my_favorite_cupcake.name)
 
-my_favorite_cupcake.add_sprinkles("Banana", "Chocolate Marshmallow", "Mocha", "Strawberry")
+my_favorite_cupcake.add_sprinkles(
+    "Banana", "Chocolate Marshmallow", "Mocha", "Strawberry"
+)
 
 print(my_favorite_cupcake.sprinkles)
