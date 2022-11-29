@@ -1,16 +1,31 @@
 class Cupcake:
+    size = "regular"
+
     def __init__(self, name, price, flavor, frosting, filling):
         self.name = name
         self.price = price
         self.flavor = flavor
         self.frosting = frosting
         self.filling = filling
-
-    def add_sprinkles(self, *args):
         self.sprinkles = []
 
+    def add_sprinkles(self, *args):
         for arg in args:
             self.sprinkles.append(arg)
+
+    def calculate_price(self, quantity):
+        return quantity * self.price
+
+
+class Mini(Cupcake):
+    size = "mini"
+
+    def __init__(self, name, price, flavor, frosting):
+        self.name = name
+        self.price = price
+        self.flavor = flavor
+        self.frosting = frosting
+        self.sprinkles = []
 
 
 my_favorite_cupcake = Cupcake(
@@ -34,3 +49,15 @@ my_favorite_cupcake.add_sprinkles(
 )
 
 print(my_favorite_cupcake.sprinkles)
+
+my_favorite_mini_cupcake = Mini(
+    "Mini Banana Chocolate Cupcake",
+    2.49,
+    "Banana",
+    "Chocolate Buttercream",
+    "Caramel",
+)
+
+print(my_favorite_mini_cupcake.name)
+print(my_favorite_mini_cupcake.price)
+print(my_favorite_mini_cupcake.size)
