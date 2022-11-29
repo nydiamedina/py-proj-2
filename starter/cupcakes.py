@@ -1,4 +1,7 @@
-class Cupcake:
+from abc import ABC, abstractmethod
+
+
+class Cupcake(ABC):
     size = "regular"
 
     def __init__(self, name, price, flavor, frosting, filling):
@@ -13,6 +16,7 @@ class Cupcake:
         for arg in args:
             self.sprinkles.append(arg)
 
+    @abstractmethod
     def calculate_price(self, quantity):
         return quantity * self.price
 
@@ -27,8 +31,27 @@ class Mini(Cupcake):
         self.frosting = frosting
         self.sprinkles = []
 
+    def calculate_price(self, quantity):
+        return quantity * self.price
 
-if __name__ == '__main__':
+
+class Large(Cupcake):
+    size = "large"
+
+    def __init__(self, name, price, flavor, frosting, filling, additional_decoration):
+        self.name = name
+        self.price = price
+        self.flavor = flavor
+        self.frosting = frosting
+        self.filling = filling
+        self.additional_decoration = additional_decoration
+        self.sprinkles = []
+
+    def calculate_price(self, quantity):
+        return quantity * self.price
+
+
+if __name__ == "__main__":
     my_favorite_cupcake = Cupcake(
         "Banana Chocolate Cupcake",
         4.99,
@@ -52,12 +75,22 @@ if __name__ == '__main__':
     print(my_favorite_cupcake.sprinkles)
 
     my_favorite_mini_cupcake = Mini(
-        "Mini Banana Chocolate Cupcake",
-        2.49,
-        "Banana",
-        "Chocolate Buttercream"
+        "Mini Banana Chocolate Cupcake", 2.49, "Banana", "Chocolate Buttercream"
     )
 
     print(my_favorite_mini_cupcake.name)
     print(my_favorite_mini_cupcake.price)
     print(my_favorite_mini_cupcake.size)
+
+    my_favorite_large_cupcake = Large(
+        "Large Banana Chocolate Cupcake",
+        6.99,
+        "Banana",
+        "Chocolate Buttercream",
+        "Caramel",
+        True,
+    )
+
+    print(my_favorite_large_cupcake.name)
+    print(my_favorite_large_cupcake.price)
+    print(my_favorite_large_cupcake.size)
