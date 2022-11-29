@@ -28,35 +28,36 @@ class Mini(Cupcake):
         self.sprinkles = []
 
 
-my_favorite_cupcake = Cupcake(
-    "Banana Chocolate Cupcake",
-    4.99,
-    "Banana",
-    "Chocolate Buttercream",
-    "Melted Chocolate",
-)
+if __name__ == '__main__':
+    my_favorite_cupcake = Cupcake(
+        "Banana Chocolate Cupcake",
+        4.99,
+        "Banana",
+        "Chocolate Buttercream",
+        "Melted Chocolate",
+    )
 
-my_favorite_cupcake.frosting = "Chocolate"
-my_favorite_cupcake.filling = "Chocolate"
-my_favorite_cupcake.name = "Triple Chocolate"
+    my_favorite_cupcake.frosting = "Chocolate"
+    my_favorite_cupcake.filling = "Chocolate"
+    my_favorite_cupcake.name = "Triple Chocolate"
 
-print(my_favorite_cupcake.frosting)
-print(my_favorite_cupcake.filling)
-print(my_favorite_cupcake.name)
+    print(my_favorite_cupcake.frosting)
+    print(my_favorite_cupcake.filling)
+    print(my_favorite_cupcake.name)
 
-my_favorite_cupcake.add_sprinkles(
-    "Banana", "Chocolate Marshmallow", "Mocha", "Strawberry"
-)
+    my_favorite_cupcake.add_sprinkles(
+        "Banana", "Chocolate Marshmallow", "Mocha", "Strawberry"
+    )
 
-print(my_favorite_cupcake.sprinkles)
+    print(my_favorite_cupcake.sprinkles)
 
-my_favorite_mini_cupcake = Mini(
-    "Mini Banana Chocolate Cupcake",
-    2.49,
-    "Banana",
-    "Chocolate Buttercream"
-)
+    my_favorite_mini_cupcake = Mini(
+        "Mini Banana Chocolate Cupcake",
+        2.49,
+        "Banana",
+        "Chocolate Buttercream"
+    )
 
-print(my_favorite_mini_cupcake.name)
-print(my_favorite_mini_cupcake.price)
-print(my_favorite_mini_cupcake.size)
+    print(my_favorite_mini_cupcake.name)
+    print(my_favorite_mini_cupcake.price)
+    print(my_favorite_mini_cupcake.size)
