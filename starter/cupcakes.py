@@ -54,8 +54,7 @@ my_favorite_mini_cupcake = Mini(
     "Mini Banana Chocolate Cupcake",
     2.49,
     "Banana",
-    "Chocolate Buttercream",
-    "Caramel",
+    "Chocolate Buttercream"
 )
 
 print(my_favorite_mini_cupcake.name)
