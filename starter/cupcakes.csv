@@ -1,0 +1,11 @@
+size,name,price,flavor,frosting,sprinkles,filling
+regular,Banana Chocolate Cupcake,4.99,Banana,Chocolate Buttercream,"['Banana', 'Chocolate Marshmallow', 'Mocha', 'Strawberry']",Melted Chocolate
+mini,Mini Lemon Chocolate Cupcake,2.49,Lemon,Chocolate Buttercream,"['Lemon', 'Orange', 'Lime']",
+large,Large Banana Chocolate Cupcake,6.99,Banana,Chocolate Buttercream,"['White Chocolate', 'Peanut Butter', 'Cookie', 'Chocolate']",Caramel
+regular,Mocha Cupcake,4.99,Chocolate,Expresso Buttercream,"['Cocoa', 'Chocolate Marshmallow', 'Mocha', 'Chocolate']",Melted Chocolate
+mini,Mini Chocolate Cupcake,2.49,Chocolate,Chocolate Buttercream,"['Pink', 'Orange', 'Yellow', 'Blue']",
+large,Large Chocolate Cream-Filled Cupcake,6.99,Chocolate,Dark Chocolate Buttercream,"['White Chocolate', 'Peanut Butter', 'Cookie', 'Chocolate']",Cream
+regular,Pink Lemonade Cupcake,4.99,Pink Lemonade,Lemon Buttercream,"['Lemon', 'Lime', 'Strawberry']",Lime
+mini,Mini Carrot Cake Cupcake,2.49,Carrot,Cream Cheese Buttercream,"['Orange', 'Yellow', 'Green']",
+large,Large Red Velvet Cupcake,6.99,Red Velvet,Cream Cheese Buttercream,"['White Chocolate', 'Cookie', 'Chocolate']",White Chocolate
+regular,Strawberry Cupcake,4.99,Strawberry,Strawberry Buttercream,"['Blueberry', 'Raspberry', 'Strawberry']",Blueberry
