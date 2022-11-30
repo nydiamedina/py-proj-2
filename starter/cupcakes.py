@@ -106,6 +106,13 @@ def write_new_csv(file, cupcakes):
                 )
 
 
+def get_cupcakes(file):
+    with open(file) as csvfile:
+        reader = csv.DictReader(csvfile)
+        reader = list(reader)
+        return reader
+
+
 def add_cupcake(file, cupcake):
     with open(file, "a", newline="\n") as csvfile:
         fieldnames = [

@@ -20,7 +20,14 @@
       </nav>
     </header>
     <div id='body-content'>
-      <h1>Cupcakes</h1>
+      <div id='cupcakes-container'>
+        {% for cupcake in cupcakes %}
+            <h3>{{ cupcake["name"] }}</h3>
+            <h4>Flavor: {{ cupcake["flavor"] }}</h4>
+            <h4>Frosting: {{ cupcake["frosting"] }}</h4>
+            <h4><b>Price: ${{ cupcake["price"] }}</b></h4>
+        {% endfor %}
+      </div>
     </div>
     <footer>
       <p id='footer-text'>Sprinkles Everywhere Cupcakes</p>

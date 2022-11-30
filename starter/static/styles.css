@@ -75,6 +75,11 @@ body {
   flex-direction: column;
 }
 
+#cupcakes-container {
+  overflow:scroll;
+  overflow-x:hidden;
+}
+
 footer { 
   background-color: #5e548e;
   margin: 0 auto;
