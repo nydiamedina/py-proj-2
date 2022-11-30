@@ -144,38 +144,33 @@ def add_cupcake(file, cupcake):
             )
 
 
-if __name__ == "__main__":
-    regular_cupcake = Regular(
-        "Banana Chocolate Cupcake",
-        4.99,
-        "Banana",
-        "Chocolate Buttercream",
-        "Melted Chocolate",
-    )
+regular_cupcake = Regular(
+    "Banana Chocolate Cupcake",
+    4.99,
+    "Banana",
+    "Chocolate Buttercream",
+    "Melted Chocolate",
+)
 
-    regular_cupcake.add_sprinkles(
-        "Banana", "Chocolate Marshmallow", "Mocha", "Strawberry"
-    )
+regular_cupcake.add_sprinkles("Banana", "Chocolate Marshmallow", "Mocha", "Strawberry")
 
-    mini_cupcake = Mini(
-        "Mini Lemon Chocolate Cupcake", 2.49, "Lemon", "Chocolate Buttercream"
-    )
+mini_cupcake = Mini(
+    "Mini Lemon Chocolate Cupcake", 2.49, "Lemon", "Chocolate Buttercream"
+)
 
-    mini_cupcake.add_sprinkles("Lemon", "Orange", "Lime")
+mini_cupcake.add_sprinkles("Lemon", "Orange", "Lime")
 
-    large_cupcake = Large(
-        "Large Banana Chocolate Cupcake",
-        6.99,
-        "Banana",
-        "Chocolate Buttercream",
-        "Caramel",
-    )
+large_cupcake = Large(
+    "Large Banana Chocolate Cupcake",
+    6.99,
+    "Banana",
+    "Chocolate Buttercream",
+    "Caramel",
+)
 
-    large_cupcake.add_sprinkles(
-        "White Chocolate", "Peanut Butter", "Cookie", "Chocolate"
-    )
+large_cupcake.add_sprinkles("White Chocolate", "Peanut Butter", "Cookie", "Chocolate")
 
-    cupcake_list = [regular_cupcake, mini_cupcake, large_cupcake]
+cupcake_list = [regular_cupcake, mini_cupcake, large_cupcake]
 
-    write_new_csv("sample.csv", cupcake_list)
-    read_csv("sample.csv")
+write_new_csv("sample.csv", cupcake_list)
+read_csv("sample.csv")
