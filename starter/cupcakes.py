@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
+from pprint import pprint
+import csv
 
 
 class Cupcake(ABC):
-    size = "regular"
-
     def __init__(self, name, price, flavor, frosting, filling):
         self.name = name
         self.price = price
@@ -20,7 +20,6 @@ class Cupcake(ABC):
     def calculate_price(self, quantity):
         return quantity * self.price
 
-
 class Mini(Cupcake):
     size = "mini"
 
@@ -30,6 +29,13 @@ class Mini(Cupcake):
         self.flavor = flavor
         self.frosting = frosting
         self.sprinkles = []
+
+    def calculate_price(self, quantity):
+        return quantity * self.price
+
+
+class Regular(Cupcake):
+    size = "regular"
 
     def calculate_price(self, quantity):
         return quantity * self.price
@@ -51,8 +57,16 @@ class Large(Cupcake):
         return quantity * self.price
 
 
+def read_csv(file):
+    with open(file) as csvfile:
+        reader = csv.DictReader(csvfile)
+
+        for row in reader:
+            pprint(row)
+
+
 if __name__ == "__main__":
-    my_favorite_cupcake = Cupcake(
+    my_favorite_cupcake = Regular(
         "Banana Chocolate Cupcake",
         4.99,
         "Banana",
@@ -94,3 +108,5 @@ if __name__ == "__main__":
     print(my_favorite_large_cupcake.name)
     print(my_favorite_large_cupcake.price)
     print(my_favorite_large_cupcake.size)
+
+    read_csv("sample.csv")
