@@ -20,6 +20,7 @@ class Cupcake(ABC):
     def calculate_price(self, quantity):
         return quantity * self.price
 
+
 class Mini(Cupcake):
     size = "mini"
 
@@ -44,13 +45,12 @@ class Regular(Cupcake):
 class Large(Cupcake):
     size = "large"
 
-    def __init__(self, name, price, flavor, frosting, filling, additional_decoration):
+    def __init__(self, name, price, flavor, frosting, filling):
         self.name = name
         self.price = price
         self.flavor = flavor
         self.frosting = frosting
         self.filling = filling
-        self.additional_decoration = additional_decoration
         self.sprinkles = []
 
     def calculate_price(self, quantity):
@@ -65,8 +65,49 @@ def read_csv(file):
             pprint(row)
 
 
+def write_new_csv(file, cupcakes):
+    with open(file, "w", newline="\n") as csvfile:
+        fieldnames = [
+            "size",
+            "name",
+            "price",
+            "flavor",
+            "frosting",
+            "sprinkles",
+            "filling",
+        ]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        writer.writeheader()
+
+        for cupcake in cupcakes:
+            if hasattr(cupcake, "filling"):
+                writer.writerow(
+                    {
+                        "size": cupcake.size,
+                        "name": cupcake.name,
+                        "price": cupcake.price,
+                        "flavor": cupcake.flavor,
+                        "frosting": cupcake.frosting,
+                        "filling": cupcake.filling,
+                        "sprinkles": cupcake.sprinkles,
+                    }
+                )
+            else:
+                writer.writerow(
+                    {
+                        "size": cupcake.size,
+                        "name": cupcake.name,
+                        "price": cupcake.price,
+                        "flavor": cupcake.flavor,
+                        "frosting": cupcake.frosting,
+                        "sprinkles": cupcake.sprinkles,
+                    }
+                )
+
+
 if __name__ == "__main__":
-    my_favorite_cupcake = Regular(
+    regular_cupcake = Regular(
         "Banana Chocolate Cupcake",
         4.99,
         "Banana",
@@ -74,39 +115,33 @@ if __name__ == "__main__":
         "Melted Chocolate",
     )
 
-    my_favorite_cupcake.frosting = "Chocolate"
-    my_favorite_cupcake.filling = "Chocolate"
-    my_favorite_cupcake.name = "Triple Chocolate"
-
-    print(my_favorite_cupcake.frosting)
-    print(my_favorite_cupcake.filling)
-    print(my_favorite_cupcake.name)
-
-    my_favorite_cupcake.add_sprinkles(
+    regular_cupcake.add_sprinkles(
         "Banana", "Chocolate Marshmallow", "Mocha", "Strawberry"
     )
 
-    print(my_favorite_cupcake.sprinkles)
-
-    my_favorite_mini_cupcake = Mini(
-        "Mini Banana Chocolate Cupcake", 2.49, "Banana", "Chocolate Buttercream"
+    mini_cupcake = Mini(
+        "Mini Lemon Chocolate Cupcake", 2.49, "Lemon", "Chocolate Buttercream"
     )
 
-    print(my_favorite_mini_cupcake.name)
-    print(my_favorite_mini_cupcake.price)
-    print(my_favorite_mini_cupcake.size)
+    mini_cupcake.add_sprinkles("Lemon", "Orange", "Lime")
 
-    my_favorite_large_cupcake = Large(
+    large_cupcake = Large(
         "Large Banana Chocolate Cupcake",
         6.99,
         "Banana",
         "Chocolate Buttercream",
         "Caramel",
-        True,
     )
 
-    print(my_favorite_large_cupcake.name)
-    print(my_favorite_large_cupcake.price)
-    print(my_favorite_large_cupcake.size)
+    large_cupcake.add_sprinkles(
+        "White Chocolate", "Peanut Butter", "Cookie", "Chocolate"
+    )
 
+    cupcake_list = [
+        regular_cupcake,
+        mini_cupcake,
+        large_cupcake
+    ]
+
+    write_new_csv("sample.csv", cupcake_list)
     read_csv("sample.csv")

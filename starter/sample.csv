@@ -1,6 +1,4 @@
 size,name,price,flavor,frosting,sprinkles,filling
-regular,Stars and Stripes,2.99,Vanilla,Vanilla,"['Red', 'White', 'Blue', 'Chocolate']",Chocolate
-mini,Oreo,0.99,Chocolate,Cookies and Cream,['Oreo pieces'],
-large,Red Velvet,3.99,Red Velvet,Cream Cheese,[],
-regular,Triple Chocolate,2.99,Chocolate,Chocolate,[],Chocolate
-regular,Strawberry,2.99,Stawberry,Vanilla,[],
+regular,Banana Chocolate Cupcake,4.99,Banana,Chocolate Buttercream,"['Banana', 'Chocolate Marshmallow', 'Mocha', 'Strawberry']",Melted Chocolate
+mini,Mini Lemon Chocolate Cupcake,2.49,Lemon,Chocolate Buttercream,"['Lemon', 'Orange', 'Lime']",
+large,Large Banana Chocolate Cupcake,6.99,Banana,Chocolate Buttercream,"['White Chocolate', 'Peanut Butter', 'Cookie', 'Chocolate']",Caramel
