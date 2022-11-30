@@ -26,6 +26,9 @@
             <h4>Flavor: {{ cupcake["flavor"] }}</h4>
             <h4>Frosting: {{ cupcake["frosting"] }}</h4>
             <h4><b>Price: ${{ cupcake["price"] }}</b></h4>
+            <a href="{{ url_for('add_cupcake', name=cupcake['name']) }}">
+                <button class='btn btn-primary'>Add to Cart</button>
+            </a>
         {% endfor %}
       </div>
     </div>

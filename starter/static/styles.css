@@ -78,6 +78,23 @@ body {
 #cupcakes-container {
   overflow:scroll;
   overflow-x:hidden;
+  text-align: center;
+}
+
+.btn.btn-primary {
+  width: 50%;
+  margin: 1%;
+  background-color: #e0b1cb;
+  border: 2px solid #e0b1cb;
+  border-radius: 4px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: #22223B;
+  font-size: 0.8vw;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
 }
 
 footer { 
