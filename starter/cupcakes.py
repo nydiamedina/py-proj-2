@@ -106,6 +106,44 @@ def write_new_csv(file, cupcakes):
                 )
 
 
+def add_cupcake(file, cupcake):
+    with open(file, "a", newline="\n") as csvfile:
+        fieldnames = [
+            "size",
+            "name",
+            "price",
+            "flavor",
+            "frosting",
+            "sprinkles",
+            "filling",
+        ]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+        if hasattr(cupcake, "filling"):
+            writer.writerow(
+                {
+                    "size": cupcake.size,
+                    "name": cupcake.name,
+                    "price": cupcake.price,
+                    "flavor": cupcake.flavor,
+                    "frosting": cupcake.frosting,
+                    "filling": cupcake.filling,
+                    "sprinkles": cupcake.sprinkles,
+                }
+            )
+        else:
+            writer.writerow(
+                {
+                    "size": cupcake.size,
+                    "name": cupcake.name,
+                    "price": cupcake.price,
+                    "flavor": cupcake.flavor,
+                    "frosting": cupcake.frosting,
+                    "sprinkles": cupcake.sprinkles,
+                }
+            )
+
+
 if __name__ == "__main__":
     regular_cupcake = Regular(
         "Banana Chocolate Cupcake",
@@ -137,11 +175,7 @@ if __name__ == "__main__":
         "White Chocolate", "Peanut Butter", "Cookie", "Chocolate"
     )
 
-    cupcake_list = [
-        regular_cupcake,
-        mini_cupcake,
-        large_cupcake
-    ]
+    cupcake_list = [regular_cupcake, mini_cupcake, large_cupcake]
 
     write_new_csv("sample.csv", cupcake_list)
     read_csv("sample.csv")
