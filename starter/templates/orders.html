@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Order</title>
+    <title>Orders</title>
     <link href='https://fonts.googleapis.com' rel='preconnect'>
     <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
@@ -16,11 +16,18 @@
         <a class='logo' href='/'>Sprinkles<span class='other-color'>Everywhere</span>Cupcakes</a>
         <a href='/'>Home</a>
         <a href='/cupcakes'>Cupcakes</a>
-        <a class='active' href='/order'>Order</a>
+        <a class='active' href='/orders'>Orders</a>
       </nav>
     </header>
     <div id='body-content'>
-      <h1>Order</h1>
+      <div id='cupcake-div'>
+        {% for cupcake in cupcakes %}
+          <h3>{{ cupcake[0] }}</h3>
+          <h4>Price: ${{ cupcake[1] }}</h4>
+          <h4>Quantity: {{ cupcake[2] }}</h4>
+          <h4>Total: ${{ cupcake[3] }}</h4>
+        {% endfor %}
+      </div>
     </div>
     <footer>
       <p id='footer-text'>Sprinkles Everywhere Cupcakes</p>

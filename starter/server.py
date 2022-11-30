@@ -24,9 +24,31 @@ def individual_cupcake(name):
         return "Sorry! Cupcake not found."
 
 
-@app.route("/order")
-def order():
-    return render_template("order.html")
+@app.route("/orders")
+def orders():
+    cupcakes = get_cupcakes("orders.csv")
+    cupcake_orders = set()
+
+    for cupcake in cupcakes:
+        cupcake_orders.add(
+            (
+                cupcake["name"],
+                cupcake["price"],
+                cupcakes.count(cupcake),
+                sum(
+                    [
+                        float(cupcakes[index]["price"])
+                        for index in [
+                            i
+                            for i, cup in enumerate(cupcakes)
+                            if cup["name"] == cupcake["name"]
+                        ]
+                    ]
+                ),
+            )
+        )
+
+    return render_template("orders.html", cupcakes=cupcake_orders)
 
 
 @app.route("/add-cupcake/<name>")
