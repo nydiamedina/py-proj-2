@@ -16,7 +16,7 @@
         <a class='logo' href='/'>Sprinkles<span class='other-color'>Everywhere</span>Cupcakes</a>
         <a class='active' href='/'>Home</a>
         <a href='/cupcakes'>Cupcakes</a>
-        <a href='/orders'>Orders</a>
+        <a href='/orders'>My Orders</a>
       </nav>
     </header>
     <div id='body-content'>
@@ -29,7 +29,7 @@
           <h4>Frosting: {{ cupcake["frosting"] }}</h4>
           <h4><b>Price: ${{ cupcake["price"] }}</b></h4>
           <a href="{{ url_for('add_cupcake', name=cupcake['name']) }}">
-              <button class='btn btn-primary'>Add to Cart</button>
+              <button class='btn btn-primary'>Order Now</button>
           </a>
         {% endfor %}
       </div>
