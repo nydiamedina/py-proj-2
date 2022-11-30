@@ -20,9 +20,11 @@
       </nav>
     </header>
     <div id='body-content'>
-      <div id='cupcakes-container'>
+      <div id='cupcake-div'>
         {% for cupcake in cupcakes %}
-            <h3>{{ cupcake["name"] }}</h3>
+            <a href="{{ url_for('individual_cupcake', name=cupcake['name']) }}">
+              <h3>{{ cupcake["name"] }}</h3>
+            </a>
             <h4>Flavor: {{ cupcake["flavor"] }}</h4>
             <h4>Frosting: {{ cupcake["frosting"] }}</h4>
             <h4><b>Price: ${{ cupcake["price"] }}</b></h4>

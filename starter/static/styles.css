@@ -73,7 +73,7 @@ body {
   flex-direction: column;
 }
 
-#cupcakes-container {
+#cupcake-div {
   overflow:scroll;
   overflow-x:hidden;
   text-align: center;

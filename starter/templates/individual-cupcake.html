@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Individual Cupcake</title>
+    <title>{{ cupcake["name"] }}</title>
     <link href='https://fonts.googleapis.com' rel='preconnect'>
     <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
@@ -20,7 +20,15 @@
       </nav>
     </header>
     <div id='body-content'>
-      <h1>Individual Cupcake</h1>
+      <div id='cupcake-div'>
+          <h3>{{ cupcake["name"] }}</h3>
+          <h4>Flavor: {{ cupcake["flavor"] }}</h4>
+          <h4>Frosting: {{ cupcake["frosting"] }}</h4>
+          <h4><b>Price: ${{ cupcake["price"] }}</b></h4>
+          <a href="{{ url_for('add_cupcake', name=cupcake['name']) }}">
+              <button class='btn btn-primary'>Add to Cart</button>
+          </a>
+      </div>
     </div>
     <footer>
       <p id='footer-text'>Sprinkles Everywhere Cupcakes</p>

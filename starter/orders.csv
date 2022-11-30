@@ -1,3 +1,4 @@
 size,name,price,flavor,frosting,sprinkles,fillingregular,Banana Chocolate Cupcake,4.99,Banana,Chocolate Buttercream,"['Banana', 'Chocolate Marshmallow', 'Mocha', 'Strawberry']",Melted Chocolate
 regular,Banana Chocolate Cupcake,4.99,Banana,Chocolate Buttercream,"['Banana', 'Chocolate Marshmallow', 'Mocha', 'Strawberry']",Melted Chocolate
 mini,Mini Lemon Chocolate Cupcake,2.49,Lemon,Chocolate Buttercream,"['Lemon', 'Orange', 'Lime']",
+regular,Mocha Cupcake,4.99,Chocolate,Expresso Buttercream,"['Cocoa', 'Chocolate Marshmallow', 'Mocha', 'Chocolate']",Melted Chocolate
